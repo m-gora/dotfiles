@@ -1,0 +1,38 @@
+[user]
+    name = 
+    email = 
+
+[alias]
+    a  = add
+    aa = add --all
+    b  = branch
+    pl = pull
+    pu = push
+    pp = !git pl && git pu
+    co = commit
+    st = status
+    me = merge
+    ch = checkout
+    graph = log --graph --oneline --decorate
+    cp = cherry-pick -n
+    sq = "!f(){ git rebase -i HEAD~$1; }; f"
+    rb = rebase 
+
+[pull]
+    rebase = "true"
+
+[merge]
+    ff = "false"
+
+[credential]
+	helper = osxkeychain
+
+[web]
+    browser = google-chrome
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	autoSetupRemote = true

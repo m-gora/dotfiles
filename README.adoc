@@ -1,0 +1,38 @@
+= Managed Dotfiles
+
+This repository contains my managed dotfiles, which are configured and maintained using GNU Stow. The goal is to keep my configuration files organized and easily deployable across different systems.
+
+== Prerequisites
+To use this repository, you need to have GNU Stow installed on your system. You can install it using your package manager. For example, on Debian-based systems, you can run:
+----
+sudo apt-get install stow
+----
+
+or on macOS using Homebrew:
+----
+brew install stow
+----
+
+== Structure
+The repository is organized into directories, each representing a different application or configuration set. For example:
+
+- `bash/` - Contains configuration files for Bash shell.
+- `vim/` - Contains configuration files for Vim editor.
+- `git/` - Contains configuration files for Git.
+- `tmux/` - Contains configuration files for Tmux terminal multiplexer.
+Each directory contains the relevant dotfiles, which will be symlinked to the appropriate locations in your home directory.
+
+== Usage
+To deploy the dotfiles to your home directory, navigate to the root of the repository and run the following command:
+----
+stow <directory_name>
+----
+Replace `<directory_name>` with the name of the directory you want to deploy (e.g., `bash`, `vim`, etc.). This will create symbolic links in your home directory pointing to the files in the specified directory.
+To remove the symlinks created by Stow, you can use the `-D` option:
+----
+stow -D <directory_name>
+----
+
+== Customization
+Feel free to fork and customize the dotfiles to suit your preferences. You can edit the files directly in their respective directories. After making changes, you can redeploy the dotfiles using the Stow command mentioned above.
+
